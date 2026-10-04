@@ -1,38 +1,52 @@
-# Assignment 3 — Bridge Pattern
+# SDP Assignment 3 — Bridge Pattern
 
-## Course
+This project demonstrates the **Bridge Design Pattern** using a `Shape` and `Renderer` example.
 
-Software Design Patterns
+## Structure
 
-## Topic
-
-Bridge Design Pattern
-
-## Project Description
-
-This project demonstrates the **Bridge structural design pattern** using a `Shape` and `Renderer` example.
-
-The purpose of the Bridge pattern is to separate an abstraction from its implementation so that both can vary independently.
-
-In this project, there are two independent hierarchies:
-
-### Abstraction hierarchy
-
+### Abstraction
 - `Shape`
 - `Circle`
 - `Square`
 
-### Implementation hierarchy
-
+### Implementation
 - `Renderer`
 - `VectorRenderer`
 - `RasterRenderer`
 
-The `Shape` class contains a reference to a `Renderer` object. This creates the bridge between the abstraction and implementation hierarchies.
+`Shape` contains a reference to `Renderer`, which connects the two hierarchies using composition.
 
----
+## Features
 
-## Project Structure
+- Bridge Pattern implemented in Java
+- Two refined abstractions: `Circle`, `Square`
+- Two concrete implementations: `VectorRenderer`, `RasterRenderer`
+- Runtime switching between renderers
+- Clean separation between abstraction and implementation
+
+## Example
+
+```java
+Shape circle = new Circle(new VectorRenderer(), 5.0);
+
+circle.draw();
+
+circle.setRenderer(new RasterRenderer());
+
+circle.draw();
+```
+
+## Technologies
+
+- Java 17
+- IntelliJ IDEA
+- Git
+- GitHub
+
+## Run
+
+Run:
 
 ```text
-src/
+src/bridge/Main.java
+```
